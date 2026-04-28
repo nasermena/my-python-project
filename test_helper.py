@@ -1,4 +1,4 @@
-from helper import add_numbers, multiply_numbers, power_numbers, subtract_numbers
+from helper import add_numbers, multiply_numbers, power_numbers, subtract_numbers, divide_numbers
 
 def test_add_numbers():
     assert add_numbers(2, 3) == 5
@@ -19,3 +19,11 @@ def test_power_numbers():
     assert power_numbers(2, 3) == 8
     assert power_numbers(5, 0) == 1
     assert power_numbers(3, 2) == 9
+    
+def test_divide_numbers():
+    assert divide_numbers(6, 3) == 2
+    assert divide_numbers(5, 2) == 2.5
+    try:
+        divide_numbers(5, 0)
+    except ValueError as e:
+        assert str(e) == "Cannot divide by zero"
